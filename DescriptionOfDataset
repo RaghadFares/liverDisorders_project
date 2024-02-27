@@ -46,42 +46,43 @@ _____
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
 |   Attribute Name   |                       Description                           |   Data Type   |                  Possible values                          |
 +====================+=============================================================+===============+===========================================================+
-| Age                |    Represents the age of the patients                       | Numeric       |  4 to 90                                                  |
+| Age                |   Represents the age of the patients.                       | Numeric       |  4 to 90                                                  |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| Gender             |   Represents the gender of the patients                     | Categotical   |  "Male" or "Female                                        |
+| Gender             |   Represents the gender of the patients.                    | Categotical   |  "Male" or "Female                                        |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| TB                 |   Abbreviation for Total Bilirubin.                         |               |                                                           |
-|                    |   Bilirubin is a yellowish substance found in bile,         | Numeric       |  continuous numrical values(different possible)           |
+|                    |   refers to Total Bilirubin.                                |               |                                                           |
+| TB                 |   Bilirubin is a yellowish substance found in bile,         | Numeric       |  continuous numrical values(different possible)           |
 |                    |   Total Bilirubin (TB) refers to the total amount of        |               |                                                           |
 |                    |   bilirubin in the blood.                                   |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| DB                 |   Abbreviation for Direct Bilirubin.                        |               |                                                           |
-|                    |   Direct Bilirubin (DB) refers specifically to the          | Numeric       |  continuous numrical values(different possible)           |
+|                    |   refers to Direct Bilirubin.                               |               |                                                           |
+| DB                 |   Direct Bilirubin (DB) refers specifically to the          | Numeric       |  continuous numrical values(different possible)           |
 |                    |   conjugated bilirubin, which is the form of bilirubin that |               |                                                           |
 |                    |   is directly excreted by the liver into bile.              |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| Alkphos            |   refers to Alkaline Phosphatase. Alkaline phosphatase is   | Numeric       |                                                           |
+| Alkphos            |   refers to Alkaline Phosphatase. Alkaline phosphatase is   | Numeric       |  continuous numrical values(different possible)           |
 |                    |   an enzyme found primarily in the liver and bones.         |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| Sgpt               |                                                             | Numeric       |                                                           |
-|                    |                                                             |               |                                                           |
-|                    |                                                             |               |                                                           |
+|                    |   refers to Serum Glutamic Pyruvic Transaminase, also known |               |                                                           |
+| Sgpt               |   as Alanine Aminotransferase (ALT). SGPT is an enzyme      | Numeric       |  continuous numrical values(different possible)           |
+|                    |   found primarily in the liver.                             |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| Sgot               |                                                             | Numeric       |                                                           |
-|                    |                                                             |               |                                                           |
-|                    |                                                             |               |                                                           |
+|                    |   refers to Serum Glutamic Oxaloacetic Transaminase, also   |               |                                                           |
+| Sgot               |   known as Aspartate Aminotransferase (AST). SGOT is an     | Numeric       |  continuous numrical values(different possible)           |
+|                    |   enzyme found primarily in the liver, heart, and muscles.  |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| TP                 |                                                             | Numeric       |                                                           |
+| TP                 |   refers to Total Proteins.                                 | Numeric       |  continuous numrical values(different possible)           |
+|                    |   It represents the total protein levels in the blood.      |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| ALB                |                                                             |               |                                                           |
-|                    |                                                             | Numeric       |                                                           |
-|                    |                                                             |               |                                                           |
+| ALB                |   represents Albumin levels in the blood.                   | Numeric       |  continuous numrical values(different possible)           |
+|                    |   Albumin is a protein produced by the liver.               |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| A/G Ratio          |                                                             |               |                                                           |
-|                    |                                                             | Numeric       |                                                           |
-|                    |                                                             |               |                                                           |
+|                    |  refers to the Albumin/Globulin ratio.                      |               |                                                           |
+|                    |  It is a calculated value obtained by dividing the albumin  |               |                                                           |
+| A/G Ratio          |  levels by the globulin levels in the blood.                | Numeric       |  continuous numrical values(different possible)           |
+|                    |  This ratio provides information about the balance between  |               |                                                           |
+|                    |  albumin and globulin proteins in the blood.                |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| Selector           |                                                             |               |                                                           |
-|                    |                                                             | Numeric       |                                                           |
-|                    |                                                             |               |                                                           |
+| Selector           |   is a class label indicating whether a patient has liver   | Numeric       |  continuous numrical values(different possible)           |
+|                    |   disease or not.                                           |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
