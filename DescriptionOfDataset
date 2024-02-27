@@ -83,7 +83,7 @@ _____
 |                    |  This ratio provides information about the balance between  |               |                                                           |
 |                    |  albumin and globulin proteins in the blood.                |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| Selector           |   is a class label indicating whether a patient has liver   | Numeric       |  continuous numrical values(different possible)           |
+| Selector           |   is a class label indicating whether a patient has liver   | Binary        |  continuous numrical values(different possible)           |
 |                    |   disease or not.                                           |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
 
@@ -113,3 +113,25 @@ print(missing_counts);
 print("Rows with missing values:");
 print(rows_with_missing);
 '''
+
+## Show the Min., 1st Qu., Median, Mean ,3rd Qu.,Max. for each numeric column:
+using summary_stats() function
+
+'''{python}
+summary_stats=df.describe();
+print(summary_stats);
+'''
+
+##Show the Variance
+Variance helps understand the extent of dispersion or scatter of values in each column. As the variance increases, it indicates that the values are more spread out
+and scattered away from the mean, whereas decreasing variance suggests that the values are less scattered and closer to the mean value.
+Therefore, our Variance results indicate:
+ #Age:
+   Due to the high variance in age-related columns, the level of dispersion and spread of values is high.
+
+#TB, DB, Alkphos, Sgpt, Sgot (Liver Enzymes):
+   With high variance in these columns, the level of dispersion and spread of values is very high.
+
+TP, ALB, A/G Ratio, Selector:
+   With moderate to low variance in these columns, the level of dispersion and spread of values is moderate to low.
+
