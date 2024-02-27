@@ -15,14 +15,15 @@ _____
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
 | Gender             |   Represents the gender of the patients                     | Categotical   |  "Male" or "Female                                        |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| TB                 |   stands for Total Bilirubin.                               |               |                                                           |
+| TB                 |   Abbreviation for Total Bilirubin.                         |               |                                                           |
 |                    |   Bilirubin is a yellowish substance found in bile,         |               |                                                           |
 |                    |   Total Bilirubin (TB) refers to the total amount of        |               |                                                           |
 |                    |   bilirubin in the blood.                                   |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| DB                 |   stands for Direct Bilirubin.                              |               |                                                           |
+| DB                 |   Abbreviation for Direct Bilirubin.                        |               |                                                           |
 |                    |   Direct Bilirubin (DB) refers specifically to the          |               |                                                           |
-|                    |   conjugated bilirubin.                                     |               |                                                           |
+|                    |   conjugated bilirubin, which is the form of bilirubin that |               |                                                           |
+|                    |   is directly excreted by the liver into bile.              |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
 | Alkphos            |                                                             |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
