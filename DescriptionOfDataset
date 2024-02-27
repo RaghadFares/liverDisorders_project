@@ -127,11 +127,11 @@ Variance helps understand the extent of dispersion or scatter of values in each 
 and scattered away from the mean, whereas decreasing variance suggests that the values are less scattered and closer to the mean value.
 Therefore, our Variance results indicate:
  #Age:
-   Due to the high variance in age-related columns, the level of dispersion and spread of values is high.
+   Due to the high variance, the level of dispersion and spread of values is high.
 
 #TB, DB, Alkphos, Sgpt, Sgot (Liver Enzymes):
    With high variance in these columns, the level of dispersion and spread of values is very high.
 
-TP, ALB, A/G Ratio, Selector:
+#TP, ALB, A/G Ratio, Selector:
    With moderate to low variance in these columns, the level of dispersion and spread of values is moderate to low.
 
