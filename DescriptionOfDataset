@@ -48,7 +48,7 @@ _____
 +====================+=============================================================+===============+===========================================================+
 | Age                |   Represents the age of the patients.                       | Numeric       |  4 to 90                                                  |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| Gender             |   Represents the gender of the patients.                    | Categotical   |  "Male" or "Female                                        |
+| Gender             |   Represents the gender of the patients.                    | Categotical   |  "Male" or "Female"                                       |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
 |                    |   refers to Total Bilirubin.                                |               |                                                           |
 | TB                 |   Bilirubin is a yellowish substance found in bile,         | Numeric       |  continuous numrical values(different possible)           |
