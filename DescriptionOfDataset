@@ -42,7 +42,7 @@ Selector       int64
 
 
 _____
-# Attribute's Description table
+## Attribute's Description table
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
 |   Attribute Name   |                       Description                           |   Data Type   |                  Possible values                          |
 +====================+=============================================================+===============+===========================================================+
@@ -86,3 +86,30 @@ _____
 | Selector           |   is a class label indicating whether a patient has liver   | Numeric       |  continuous numrical values(different possible)           |
 |                    |   disease or not.                                           |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
+
+# phase 2
+
+## sample of 20 employees from the dataset:
+using sample() function
+
+'''{python}
+sample=df.sample(n=20);
+print(sample);
+'''
+
+## Show the missing value:
+We have 4 missing values in a column "A/G Ratio"
+
+'''{python}
+# Count missing values in each column
+missing_counts = missing_values.sum();
+
+# Extract rows with missing values
+rows_with_missing = df[df.isna().any(axis=1)];
+
+# Print the results
+print("Missing counts in each column:");
+print(missing_counts);
+print("Rows with missing values:");
+print(rows_with_missing);
+'''
