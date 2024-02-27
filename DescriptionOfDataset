@@ -3,6 +3,41 @@
 
 ##Aisha workspace
 
+General information about the dataset
+
+
+-The source of the dataSet: https://www.kaggle.com/datasets/fatemehmehrparvar/liver-disorders
+
+
+-The goal of collecting this dataset
+The aim of creating this dataset is to study the differences between US patients and Indian patients with liver disease.
+Therefore, there are differences based on gender in predicting liver disease,
+as previous studies found the number of people infected with this disease,
+its prevalence rate, and many statistical details.
+
+
+- Number of attributes: 11
+
+
+- Attribute types:
+          Data Types
+Age            int64
+Gender        object
+TB           float64
+DB           float64
+Alkphos        int64
+Sgpt           int64
+Sgot           int64
+TP           float64
+ALB          float64
+A/G Ratio    float64
+Selector       int64
+
+
+- Number of objects: 583
+
+
+- label: Selector
 
 
 
