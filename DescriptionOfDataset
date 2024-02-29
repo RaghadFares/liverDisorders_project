@@ -245,5 +245,17 @@ plt.title('Relationship between Total Proteins and Liver Disease Diagnosis')
 plt.grid(True)
 plt.show()
 '''
-The chart reveals a relationship between TP(Total Proteins) and liver disease, despite the weak correlation. Non-affected individuals also have TP levels, 
+The chart(Boxplot) reveals a relationship between TP(Total Proteins) and liver disease, despite the weak correlation. Non-affected individuals also have TP levels, 
 but those affected have slightly higher levels.
+__
+'''{python}
+plt.figure(figsize=(10, 6))
+plt.boxplot([df[df['Selector'] == 1]['ALB'], df[df['Selector'] == 2]['ALB']], labels=['Liver Disease', 'No Liver Disease'])
+plt.xlabel('Liver Disease Diagnosis')
+plt.ylabel('Albumin')
+plt.title('Relationship between Albumin and Liver Disease Diagnosis')
+plt.grid(True)
+plt.show()
+'''
+From the chart(BoxPlot), it is evident that there is a negative correlation between ALB(Albumin) and non-affected individuals with liver disease, 
+as an increase in ALB indicates liver health. Individuals with liver disease have lower levels of ALB.
