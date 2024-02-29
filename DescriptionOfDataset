@@ -148,3 +148,20 @@ plt.show();
 '''
 People affected by liver disease were selected from the 'Selector' attribute for both genders of the 'Gander' attribute for comparison between the ratio of affected women and men. 
 As a result, it was concluded that men are much more susceptible to liver disease than women by a significant margin.
+__
+'''{python}
+import matplotlib.pyplot as plt
+plt.figure(figsize=(10, 6))
+plt.scatter(df[df['Selector'] == 1]['TB'], df[df['Selector'] == 1]['Selector'], color='red', label='Liver Disease')
+plt.scatter(df[df['Selector'] == 2]['TB'], df[df['Selector'] == 2]['Selector'], color='blue', label='No Liver Disease')
+plt.xlabel('Total Bilirubin (TB)')
+plt.ylabel('Liver Disease (1=Diseased, 2=Non-Diseased)')
+plt.title('Relationship between Total Bilirubin (TB) and Liver Disease Diagnosis')
+plt.legend()
+plt.grid(True)
+plt.ylim(0.9, 2.1)
+plt.show()
+'''
+The chart above indicates a relationship between liver disease diagnosis and elevated levels of bilirubin in the blood, as patients with liver disease
+have higher levels of bilirubin in the blood compared to non-diseased individuals.
+__
