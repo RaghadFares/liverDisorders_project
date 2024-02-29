@@ -235,3 +235,15 @@ plt.show()
 '''
 The chart(line Graph) clearly shows a relationship between SGOT(Serum Glutamate Oxaloacetic Transaminase) and liver disease, as patients with liver disease have higher levels of SGOT compared 
 to non-affected individuals.
+__
+'''{python}
+plt.figure(figsize=(10, 6))
+plt.boxplot([df[df['Selector'] == 1]['TP'], df[df['Selector'] == 2]['TP']], labels=['Liver Disease', 'No Liver Disease'])
+plt.xlabel('Liver Disease Diagnosis')
+plt.ylabel('Total Proteins')
+plt.title('Relationship between Total Proteins and Liver Disease Diagnosis')
+plt.grid(True)
+plt.show()
+'''
+The chart reveals a relationship between TP(Total Proteins) and liver disease, despite the weak correlation. Non-affected individuals also have TP levels, 
+but those affected have slightly higher levels.
