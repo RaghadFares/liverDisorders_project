@@ -96,7 +96,7 @@ using sample() function
 sample=df.sample(n=20);
 print(sample);
 '''
-
+______
 ## Show the missing value:
 We have 4 missing values in a column "A/G Ratio"
 
@@ -113,7 +113,7 @@ print(missing_counts);
 print("Rows with missing values:");
 print(rows_with_missing);
 '''
-
+______
 ## Show the Min., 1st Qu., Median, Mean ,3rd Qu.,Max. for each numeric column:
 using summary_stats() function
 
@@ -121,7 +121,7 @@ using summary_stats() function
 summary_stats=df.describe();
 print(summary_stats);
 '''
-
+______
 ##Show the Variance
 Variance helps understand the extent of dispersion or scatter of values in each column. As the variance increases, it indicates that the values are more spread out
 and scattered away from the mean, whereas decreasing variance suggests that the values are less scattered and closer to the mean value.
@@ -134,4 +134,17 @@ Therefore, our Variance results indicate:
 
 #TP, ALB, A/G Ratio, Selector:
    With moderate to low variance in these columns, the level of dispersion and spread of values is moderate to low.
-
+______
+## Understanding the data through graph representations:
+'''{python}
+import matplotlib.pyplot as plt
+df = pd.read_csv('Dis.csv');
+gender_diagnosis_counts = df[df['Selector'] == 1]['Gender'].value_counts();
+plt.figure(figsize=(8, 8));
+plt.pie(gender_diagnosis_counts, labels=gender_diagnosis_counts.index, autopct='%1.1f%%', startangle=140, colors=['lightblue','pink']);
+plt.title('The relationship between gender and liver disease');
+plt.axis('equal');
+plt.show();
+'''
+People affected by liver disease were selected from the 'Selector' attribute for both genders of the 'Gander' attribute for comparison between the ratio of affected women and men. 
+As a result, it was concluded that men are much more susceptible to liver disease than women by a significant margin.
