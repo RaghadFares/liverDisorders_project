@@ -259,3 +259,15 @@ plt.show()
 '''
 From the chart(BoxPlot), it is evident that there is a negative correlation between ALB(Albumin) and non-affected individuals with liver disease, 
 as an increase in ALB indicates liver health. Individuals with liver disease have lower levels of ALB.
+__
+'''{python}
+plt.figure(figsize=(10, 6))
+plt.boxplot([df[df['Selector'] == 1]['A/G Ratio'].dropna(), df[df['Selector'] == 2]['A/G Ratio'].dropna()], labels=['Liver Disease', 'No Liver Disease'])
+plt.xlabel('Liver Disease Diagnosis')
+plt.ylabel('A/G Ratio')
+plt.title('Relationship between A/G Ratio and Liver Disease Diagnosis')
+plt.grid(True)
+plt.show()
+'''
+The chart(BoxPlot) reveals variation in the A/G ratio among individuals with liver disease compared to those without. 
+However, there is some correlation between an elevated A/G ratio and the presence of liver disease.
