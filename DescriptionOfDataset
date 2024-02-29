@@ -162,7 +162,7 @@ plt.grid(True)
 plt.ylim(0.9, 2.1)
 plt.show()
 '''
-The chart above indicates a relationship between liver disease diagnosis and elevated levels of Total Bilirubin in the blood, as patients with liver disease
+The chart(Scatter) above indicates a relationship between liver disease diagnosis and elevated levels of Total Bilirubin in the blood, as patients with liver disease
 have higher levels of Total Bilirubin in the blood compared to non-diseased individuals.
 __
 '''{python}
@@ -177,5 +177,45 @@ plt.grid(True)
 plt.ylim(0.9, 2.1)
 plt.show()
 '''
-the chart also shows a relationship between DB(Direct Bilirubin) and liver disease diagnosis, as patients with liver disease have higher levels 
+the chart(Scatter) shows a relationship between DB(Direct Bilirubin) and liver disease diagnosis, as patients with liver disease have higher levels 
 of DB ‏(Direct Bilirubin) compared to those without liver disease.
+__
+'''{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+plt.figure(figsize=(10, 6))
+plt.boxplot([df[df['Selector'] == 1]['Alkphos'], df[df['Selector'] == 2]['Alkphos']], labels=['Liver Disease', 'No Liver Disease'])
+plt.xlabel('Liver Disease Diagnosis')
+plt.ylabel('Alkphos')
+plt.title('Relationship between Alkphos and Liver Disease Diagnosis')
+plt.grid(True)
+plt.show()
+'''
+The chart(Boxplot) illustrates a direct relationship between Alkphos and liver disease, as patients with liver disease have higher levels of Alkphos 
+compared to non-diseased individuals.
+__
+'''{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+plt.figure(figsize=(10, 6))
+plt.boxplot([df[df['Selector'] == 1]['Alkphos'], df[df['Selector'] == 2]['Alkphos']], labels=['Liver Disease', 'No Liver Disease'])
+plt.xlabel('Liver Disease Diagnosis')
+plt.ylabel('Alkphos')
+plt.title('Relationship between Alkphos and Liver Disease Diagnosis')
+plt.grid(True)
+plt.show()
+'''
+The chart(Boxplot) illustrates a direct relationship between Alkphos and liver disease, as patients with liver disease have higher levels of Alkphos 
+compared to non-diseased individuals.
+__
+'''{python}
+plt.figure(figsize=(10, 6))
+plt.boxplot([df[df['Selector'] == 1]['Sgpt'], df[df['Selector'] == 2]['Sgpt']], labels=['Liver Disease', 'No Liver Disease'])
+plt.xlabel('Liver Disease Diagnosis')
+plt.ylabel('Sgpt')
+plt.title('Relationship between Sgpt and Liver Disease Diagnosis')
+plt.grid(True)
+plt.show()
+'''
+The chart clearly shows a relationship between liver disease and SGPT(Serum Glutamate Pyruvate Transaminase) as patients with liver disease 
+have higher levels of this enzyme compared to non-affected individuals.
