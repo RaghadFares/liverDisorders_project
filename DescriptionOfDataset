@@ -271,3 +271,5 @@ plt.show()
 '''
 The chart(BoxPlot) reveals variation in the A/G ratio among individuals with liver disease compared to those without. 
 However, there is some correlation between an elevated A/G ratio and the presence of liver disease.
+
+________________________
