@@ -162,6 +162,20 @@ plt.grid(True)
 plt.ylim(0.9, 2.1)
 plt.show()
 '''
-The chart above indicates a relationship between liver disease diagnosis and elevated levels of bilirubin in the blood, as patients with liver disease
-have higher levels of bilirubin in the blood compared to non-diseased individuals.
+The chart above indicates a relationship between liver disease diagnosis and elevated levels of Total Bilirubin in the blood, as patients with liver disease
+have higher levels of Total Bilirubin in the blood compared to non-diseased individuals.
 __
+'''{python}
+plt.figure(figsize=(10, 6))
+plt.scatter(df[df['Selector'] == 1]['DB'], df[df['Selector'] == 1]['Selector'], color='red', label='Liver Disease')
+plt.scatter(df[df['Selector'] == 2]['DB'], df[df['Selector'] == 2]['Selector'], color='blue', label='No Liver Disease')
+plt.xlabel('Direct Billirubin(DB)')
+plt.ylabel('Liver Disease (1=Diseased, 2=Non-Diseased)')
+plt.title('Relationship between Direct Billirubin (DB) and Liver Disease Diagnosis')
+plt.legend()
+plt.grid(True)
+plt.ylim(0.9, 2.1)
+plt.show()
+'''
+the chart also shows a relationship between DB(Direct Bilirubin) and liver disease diagnosis, as patients with liver disease have higher levels 
+of DB ‏(Direct Bilirubin) compared to those without liver disease.
