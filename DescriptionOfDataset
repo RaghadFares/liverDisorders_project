@@ -217,5 +217,21 @@ plt.title('Relationship between Sgpt and Liver Disease Diagnosis')
 plt.grid(True)
 plt.show()
 '''
-The chart clearly shows a relationship between liver disease and SGPT(Serum Glutamate Pyruvate Transaminase) as patients with liver disease 
+The chart(Boxplot) clearly shows a relationship between liver disease and SGPT(Serum Glutamate Pyruvate Transaminase) as patients with liver disease 
 have higher levels of this enzyme compared to non-affected individuals.
+__
+'''{python}
+import matplotlib.pyplot as plt
+import pandas as pd
+plt.figure(figsize=(10, 6))
+mean_sgot_by_selector = df.groupby('Selector')['Sgot'].mean()
+plt.plot(mean_sgot_by_selector.index, mean_sgot_by_selector.values, marker='o', linestyle='-')
+plt.xlabel('Liver Disease Diagnosis (1=Diseased, 2=Non-Diseased)')
+plt.ylabel('Mean SGOT Level')
+plt.title('Relationship between SGOT and Liver Disease Diagnosis')
+plt.grid(True)
+plt.xticks([1, 2], ['Diseased', 'Non-Diseased'])
+plt.show()
+'''
+The chart(line Graph) clearly shows a relationship between SGOT(Serum Glutamate Oxaloacetic Transaminase) and liver disease, as patients with liver disease have higher levels of SGOT compared 
+to non-affected individuals.
