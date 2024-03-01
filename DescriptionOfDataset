@@ -273,3 +273,20 @@ The chart(BoxPlot) reveals variation in the A/G ratio among individuals with liv
 However, there is some correlation between an elevated A/G ratio and the presence of liver disease.
 
 ________________________
+
+# Data cleaning :
+
+hundling missing values\
+'''{python}
+
+import pandas as pd
+mean_value = df['A/G Ratio'].mean()
+df['A/G Ratio'].fillna(value=mean_value, inplace=True)
+
+'''
+# Because all the 4 missing values in our data are in just one column which is the A/G Ratio, so we calculated the mean for this column and then replaced the missing values with this mean
+
+
+
+
+
