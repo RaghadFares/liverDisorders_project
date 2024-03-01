@@ -297,7 +297,7 @@ print("The number of duplicate rows in the dataset:", num_duplicate_rows)
 
 # Number of duplicate rows in the dataset: 13
 
-------------------------------------------------------
+__
 
 Display the duplicates data set and in which line it is repeated\
 '''{python}
@@ -346,7 +346,8 @@ Line 165 is repeated.
 Line 175 is repeated.
 Line 202 is repeated.
 
-------------------------------------------------------
+__
+
 hundling duplicates lines\
 '''{python}
 
