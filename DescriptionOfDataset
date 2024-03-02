@@ -394,23 +394,12 @@ __
 import pandas as pd
 import numpy as np
 from scipy import stats
-
-# Load the dataset
 df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv')
-
-# Select numeric columns
 numeric_cols = df.select_dtypes(include=[np.number]).columns
-
-# Exclude non-numeric column (e.g., 'Gender') from outlier detection
 numeric_cols = numeric_cols.drop('Gender', errors='ignore')
-
-# Identify outliers using statistical methods (e.g., z-score method)
 z_scores = np.abs(stats.zscore(df[numeric_cols]))
-
-# Remove outliers
 df = df[(z_scores <= 3).all(axis=1)]
 
-# Check if there are remaining outliers
 outliers = df[(z_scores > 3).any(axis=1)]
 if outliers.empty:
     print("No outliers found after removal.")
