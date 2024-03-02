@@ -418,6 +418,8 @@ else:
     print("Outliers found after removal:")
     print(outliers)
 
-#
+# as we know removing outliers focuses on numerical values and
+because of that I excluded the nonnumerical values and then removed the outliers 
+and as an optional step I checked if there were any left outliers in our data or not.
 
 
