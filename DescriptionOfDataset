@@ -285,7 +285,9 @@ df['A/G Ratio'].fillna(value=mean_value, inplace=True)
 
 
 # Because all the 4 missing values in our data are in just one column which is the A/G Ratio, so we calculated the mean for this column and then replaced the missing values with this mean
------------------------------------------------------
+__
+
+# Remove duplicates
 
  Display how many duplicate rows I have\
 '''{python}
@@ -297,9 +299,8 @@ print("The number of duplicate rows in the dataset:", num_duplicate_rows)
 
 # Number of duplicate rows in the dataset: 13
 
-__
 
-Display the duplicates data set and in which line it is repeated\
+# Display the duplicates data set and in which line it is repeated\
 '''{python}
 
 import pandas as pd
@@ -346,9 +347,8 @@ Line 165 is repeated.
 Line 175 is repeated.
 Line 202 is repeated.
 
-__
 
-hundling duplicates lines\
+# hundling duplicates lines\
 '''{python}
 
 import pandas as pd
@@ -385,3 +385,11 @@ print(df)
 582         2  
 
 [570 rows x 11 columns]
+
+__
+
+#
+
+
+
+
