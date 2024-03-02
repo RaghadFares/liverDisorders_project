@@ -276,6 +276,47 @@ ________________________
 #Data Preprocessing:
 # Data cleaning
 
+__
+
+# Remove duplicates
+
+ # Firstly display how many duplicate rows I have\
+'''{python}
+
+import pandas as pd
+df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv')
+num_duplicate_rows = df.duplicated().sum()
+print("The number of duplicate rows in the dataset:", num_duplicate_rows)
+
+
+# Secondly display the duplicates data set and in which line it is repeated\
+'''{python}
+
+import pandas as pd
+df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv')
+duplicate_rows = df[df.duplicated()]
+if duplicate_rows.empty:
+    print("No duplicate rows found.")
+else:
+    print("Duplicate rows found:")
+    print(duplicate_rows)
+    print("\nLines where duplicates are repeated:")
+    for index, row in duplicate_rows.iterrows():
+        print("Line", index + 1, "is repeated.")
+
+
+# Thirdly hundling duplicates lines\
+'''{python}
+
+import pandas as pd
+df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv')
+df = df.drop_duplicates()
+print("DataFrame after dropping all duplicate rows:")
+print(df)
+df.to_csv('Indian Liver Patient Dataset (ILPD).csv', index=False)
+
+__
+
 # hundling missing values\
 '''{python}
 
@@ -328,45 +369,4 @@ and as an optional step I checked if there were any left outliers in our data or
 
 
 
-
-__
-
-# Remove duplicates
-
- # Firstly display how many duplicate rows I have\
-'''{python}
-
-import pandas as pd
-df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv')
-num_duplicate_rows = df.duplicated().sum()
-print("The number of duplicate rows in the dataset:", num_duplicate_rows)
-
-
-# Secondly display the duplicates data set and in which line it is repeated\
-'''{python}
-
-import pandas as pd
-df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv')
-duplicate_rows = df[df.duplicated()]
-if duplicate_rows.empty:
-    print("No duplicate rows found.")
-else:
-    print("Duplicate rows found:")
-    print(duplicate_rows)
-    print("\nLines where duplicates are repeated:")
-    for index, row in duplicate_rows.iterrows():
-        print("Line", index + 1, "is repeated.")
-
-
-# Thirdly hundling duplicates lines\
-'''{python}
-
-import pandas as pd
-df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv')
-df = df.drop_duplicates()
-print("DataFrame after dropping all duplicate rows:")
-print(df)
-df.to_csv('Indian Liver Patient Dataset (ILPD).csv', index=False)
-
- 
 
