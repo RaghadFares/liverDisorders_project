@@ -289,7 +289,7 @@ __
 
 # Remove duplicates
 
- Display how many duplicate rows I have\
+ # Firstly display how many duplicate rows I have\
 '''{python}
 
 import pandas as pd
@@ -299,7 +299,7 @@ print("The number of duplicate rows in the dataset:", num_duplicate_rows)
 
 
 
-# Display the duplicates data set and in which line it is repeated\
+# Secondly display the duplicates data set and in which line it is repeated\
 '''{python}
 
 import pandas as pd
@@ -315,7 +315,7 @@ else:
         print("Line", index + 1, "is repeated.")
 
 
-# hundling duplicates lines\
+# Thirdly hundling duplicates lines\
 '''{python}
 
 import pandas as pd
