@@ -298,7 +298,6 @@ num_duplicate_rows = df.duplicated().sum()
 print("The number of duplicate rows in the dataset:", num_duplicate_rows)
 
 
-
 # Secondly display the duplicates data set and in which line it is repeated\
 '''{python}
 
@@ -320,10 +319,10 @@ else:
 
 import pandas as pd
 df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv')
-df.drop_duplicates(inplace=True)
-print("DataFrame after dropping duplicate rows:")
+df = df.drop_duplicates()
+print("DataFrame after dropping all duplicate rows:")
 print(df)
-
+df.to_csv('Indian Liver Patient Dataset (ILPD).csv', index=False)
 
    __
 
