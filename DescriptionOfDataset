@@ -93,6 +93,8 @@ _____
 using sample() function
 
 '''{python}
+import pandas as pd
+df = pd.read_csv('Indian Liver Patient Dataset (ILPD)');
 sample=df.sample(n=20);
 print(sample);
 '''
@@ -138,7 +140,6 @@ ______
 ## Understanding the data through graph representations:
 '''{python}
 import matplotlib.pyplot as plt
-df = pd.read_csv('Dis.csv');
 gender_diagnosis_counts = df[df['Selector'] == 1]['Gender'].value_counts();
 plt.figure(figsize=(8, 8));
 plt.pie(gender_diagnosis_counts, labels=gender_diagnosis_counts.index, autopct='%1.1f%%', startangle=140, colors=['lightblue','pink']);
@@ -150,7 +151,6 @@ People affected by liver disease were selected from the 'Selector' attribute for
 As a result, it was concluded that men are much more susceptible to liver disease than women by a significant margin.
 __
 '''{python}
-import matplotlib.pyplot as plt
 plt.figure(figsize=(10, 6))
 plt.scatter(df[df['Selector'] == 1]['TB'], df[df['Selector'] == 1]['Selector'], color='red', label='Liver Disease')
 plt.scatter(df[df['Selector'] == 2]['TB'], df[df['Selector'] == 2]['Selector'], color='blue', label='No Liver Disease')
@@ -181,8 +181,6 @@ the chart(Scatter) shows a relationship between DB(Direct Bilirubin) and liver d
 of DB ‏(Direct Bilirubin) compared to those without liver disease.
 __
 '''{python}
-import matplotlib.pyplot as plt
-import pandas as pd
 plt.figure(figsize=(10, 6))
 plt.boxplot([df[df['Selector'] == 1]['Alkphos'], df[df['Selector'] == 2]['Alkphos']], labels=['Liver Disease', 'No Liver Disease'])
 plt.xlabel('Liver Disease Diagnosis')
@@ -195,8 +193,6 @@ The chart(Boxplot) illustrates a direct relationship between Alkphos and liver d
 compared to non-diseased individuals.
 __
 '''{python}
-import matplotlib.pyplot as plt
-import pandas as pd
 plt.figure(figsize=(10, 6))
 plt.boxplot([df[df['Selector'] == 1]['Alkphos'], df[df['Selector'] == 2]['Alkphos']], labels=['Liver Disease', 'No Liver Disease'])
 plt.xlabel('Liver Disease Diagnosis')
@@ -221,8 +217,6 @@ The chart(Boxplot) clearly shows a relationship between liver disease and SGPT(S
 have higher levels of this enzyme compared to non-affected individuals.
 __
 '''{python}
-import matplotlib.pyplot as plt
-import pandas as pd
 plt.figure(figsize=(10, 6))
 mean_sgot_by_selector = df.groupby('Selector')['Sgot'].mean()
 plt.plot(mean_sgot_by_selector.index, mean_sgot_by_selector.values, marker='o', linestyle='-')
