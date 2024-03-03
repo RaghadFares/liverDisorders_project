@@ -274,9 +274,6 @@ __
 
 # Remove duplicates
 
- # Display how many duplicates rows in the data set and hundling this duplicates rows\
-'''{python}
-
 import pandas as pd
 df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv')
 num_duplicates = df.duplicated().sum()
@@ -284,7 +281,7 @@ df_cleaned = df.drop_duplicates()
 print("Number of duplicate rows:", num_duplicates)
 print("DataFrame after dropping all duplicate rows:")
 print(df_cleaned)
-df_cleaned.to_csv('Indian Liver Patient Dataset (ILPD).csv', index=False)
+df_cleaned.to_csv('cleaned Indian Liver Patient Dataset (ILPD).csv', index=False)
 
 __
 
