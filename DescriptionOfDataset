@@ -334,6 +334,42 @@ df.to_csv('Indian Liver Patient Dataset (ILPD).csv', index=False)
 because of that I excluded the nonnumerical values and then removed the outliers 
 and as an optional step I checked if there were any left outliers in our data or not.
 
+# Data Transmation 
+ __
+
+# encoding\
+'''{python}
+
+import pandas as pd
+df = pd.read_csv("Indian Liver Patient Dataset (ILPD).csv")
+df["Gender"] = df["Gender"].map({"Male": 0, "Female": 1})
+# Print the updated dataset
+print(df)
+#Here in the encoding  method, we represent the gender with values 0 and 1, which mean as follows (male =0) and (female = 1)
+
+ __
+# Normaliztion \
+'''{python}
+import pandas as pd
+df = pd.read_csv("Indian Liver Patient Dataset (ILPD).csv")
+for column in df.columns:
+    if column not in ['Age', 'Selector']:
+        if df[column].dtype == 'int64':
+            df[column] = df[column].astype(float) / 10
+
+# Print the normalized dataset
+print(df)
+#Here in Normaliztion method, we normalize the attributes and unify their scale since the range for each attribute is quite different ,
+This method helps us to format all the values in dataset and facilitates the analysis process. 
+
+
+
+
+
+
+
+
+
 
 
 
