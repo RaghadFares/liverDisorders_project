@@ -122,9 +122,28 @@ using summary_stats() function
 summary_stats=df.describe();
 print(summary_stats);
 '''
-From these summary statistics, we can conclude the following:
-There is a significant variation in ages; with the highest value being 90 years and the lowest being 4 years,
-with an average of 44.74 years. This indicates that liver disease can affect individuals across a wide range of ages and is not limited to a specific age group or time period.
+From these summary statistics, several key observations can be made:
+
+#Age:
+- There is significant variability in ages, ranging from 4 to 90 years, with an average of 44.74 years. This indicates that liver disease can affect individuals across a wide age range.
+#Total Bilirubin (TB):
+- The values vary significantly, with a maximum of 75 and a minimum of 0.4. The mean is 3.3, while the median is 1. This suggests the presence of extreme values or some deviation in TB levels.
+#Direct Bilirubin (DB):
+- DB values range from 0.1 to 19.7, with a mean of 1.49, indicating significant variation in direct bilirubin levels.
+#Alkaline Phosphatase (Alkphos):
+- Alkphos values range from 63 to 2110, with a mean of 290.58, indicating the presence of extreme values and significant variation in alkaline phosphatase levels.
+#Serum Glutamic-Pyruvic Transaminase (Sgpt):
+- Sgpt values range from 10 to 2000, with a mean of 80.71, indicating significant variation in Sgpt levels.
+#Serum Glutamic-Oxaloacetic Transaminase (Sgot):
+- Sgot values range from 10 to 4929, with a mean of 109.91, indicating significant variation in Sgot levels.
+#Total Protein (TP):
+- TP values range from 2.7 to 9.6, with a mean of 6.48, suggesting convergence of data and no significant variation in total protein levels.
+#Albumin (ALB):
+- ALB values range from 0.3 to 2.8, with a mean of 0.947, indicating convergence of data and no significant variation in albumin levels.
+#Albumin/Globulin Ratio (A/G Ratio):
+- The A/G Ratio ranges from 1 to 2, with a mean of 1.29, indicating convergence of data and no significant variation in the albumin/globulin ratio.
+#Selector:
+- The values are binary, limited to 1 and 2, indicating binary classification labels.
 ______
 ##Show the Variance
 
