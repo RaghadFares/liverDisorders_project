@@ -50,10 +50,10 @@ _____
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
 | Gender             |   Represents the gender of the patients.                    | Categotical   |  "Male" or "Female"                                       |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-|                    |   refers to Total Bilirubin.                                |               |                                                           |
-| TB                 |   Bilirubin is a yellowish substance found in bile,         | Numeric       |  continuous numrical values(different possible)           |
-|                    |   Total Bilirubin (TB) refers to the total amount of        |               |                                                           |
-|                    |   bilirubin in the blood.                                   |               |                                                           |
+|                    |   It is an indicator of the total amount of bilirubin in    |               |                                                           |
+| TB                 |   the blood. Bilirubin is a yellow pigment produced by the  | Numeric       |  continuous numrical values(different possible)           |
+|                    |   breakdown of old red blood cells. It is associated with   |               |                                                           |
+|                    |   the liver.                                                |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
 |                    |   refers to Direct Bilirubin.                               |               |                                                           |
 | DB                 |   Direct Bilirubin (DB) refers specifically to the          | Numeric       |  continuous numrical values(different possible)           |
@@ -71,17 +71,17 @@ _____
 | Sgot               |   known as Aspartate Aminotransferase (AST). SGOT is an     | Numeric       |  continuous numrical values(different possible)           |
 |                    |   enzyme found primarily in the liver, heart, and muscles.  |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-| TP                 |   refers to Total Proteins.                                 | Numeric       |  continuous numrical values(different possible)           |
-|                    |   It represents the total protein levels in the blood.      |               |                                                           |
+|                    |   It measures the total protein level in the blood, which   |               |  continuous numrical values(different possible)           |
+|  TP                |   primarily consists of albumin and globulins.It is         | Numeric       |                                                           |
+|                    |   associated with the                                       |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
 | ALB                |   represents Albumin levels in the blood.                   | Numeric       |  continuous numrical values(different possible)           |
 |                    |   Albumin is a protein produced by the liver.               |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
-|                    |  refers to the Albumin/Globulin ratio.                      |               |                                                           |
-|                    |  It is a calculated value obtained by dividing the albumin  |               |                                                           |
-| A/G Ratio          |  levels by the globulin levels in the blood.                | Numeric       |  continuous numrical values(different possible)           |
-|                    |  This ratio provides information about the balance between  |               |                                                           |
-|                    |  albumin and globulin proteins in the blood.                |               |                                                           |
+|                    |   measures the ratio between albumin and globulins in the   |               |                                                           |
+|                    |   blood. Albumin is a type of protein primarily produced    |               |                                                           |
+| A/G Ratio          |   in the liver and plays a crucial role in maintaining blood| Numeric       |  continuous numrical values(different possible)           |
+|                    |   pressure and transporting nutrients.                      |               |                                                           |
 +--------------------+-------------------------------------------------------------+---------------+-----------------------------------------------------------+
 | Selector           |   is a class label indicating whether a patient has liver   | Binary        |  continuous numrical values(different possible)           |
 |                    |   disease or not.                                           |               |                                                           |
