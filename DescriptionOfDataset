@@ -292,9 +292,8 @@ plt.title('Relationship between A/G Ratio and Liver Disease Diagnosis')
 plt.grid(True)
 plt.show()
 '''
-The chart(BoxPlot) reveals variation in the A/G ratio among individuals with liver disease compared to those without. 
-However, there is some correlation between an elevated A/G ratio and the presence of liver disease.
-
+The (boxplot) shows a decrease in the A/G ratio among individuals with liver disease compared to those without. This indicates that 
+the decrease in the A/G ratio may be an indicator of changes in liver function and a marker for the occurrence of liver disease.
 ________________________
 #Data Preprocessing:
 # Data cleaning
