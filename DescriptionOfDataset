@@ -122,6 +122,9 @@ using summary_stats() function
 summary_stats=df.describe();
 print(summary_stats);
 '''
+From these summary statistics, we can conclude the following:
+There is a significant variation in ages; with the highest value being 90 years and the lowest being 4 years,
+with an average of 44.74 years. This indicates that liver disease can affect individuals across a wide range of ages and is not limited to a specific age group or time period.
 ______
 ##Show the Variance
 
