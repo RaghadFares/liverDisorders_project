@@ -133,17 +133,17 @@ variance= df.var(numeric_only=True);
 print(variance);
 '''
 
-Variance helps understand the extent of dispersion or scatter of values in each column. As the variance increases, it indicates that the values are more spread out
-and scattered away from the mean, whereas decreasing variance suggests that the values are less scattered and closer to the mean value.
-Therefore, our Variance results indicate:
- #Age:
-   Due to the high variance, the level of dispersion and spread of values is high.
+Variance helps understand the extent of dispersion or scatter of values in each column. As the variance increases,
+it indicates that the values are more spread out and scattered away from the mean, whereas decreasing variance suggests that the values are less scattered and closer to the mean value.
+Therefore, our variance results indicate:
+#Age:
+The variance is high, so the level of dispersion and spread of values is high.
 
-#TB, DB, Alkphos, Sgpt, Sgot (Liver Enzymes):
-   With high variance in these columns, the level of dispersion and spread of values is very high.
+#TB, DB, Alkphos, Sgpt, Sgot:
+The variance is very high in these columns, so the level of dispersion and spread of values is very high.
 
 #TP, ALB, A/G Ratio, Selector:
-   With moderate to low variance in these columns, the level of dispersion and spread of values is moderate to low.
+The variance is moderate to low in these columns, so the level of dispersion and spread of values is moderate to low.
 ______
 ## Understanding the data through graph representations:
 '''{python}
