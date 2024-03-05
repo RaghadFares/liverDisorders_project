@@ -177,7 +177,7 @@ plt.axis('equal');
 plt.show();
 '''
 People affected by liver disease were selected from the 'Selector' attribute for both genders of the 'Gander' attribute for comparison between the ratio of affected women and men. 
-As a result, it was concluded that men are much more susceptible to liver disease than women by a significant margin.
+As a result, it has been found that men are significantly more susceptible to liver disease than women.
 __
 '''{python}
 plt.figure(figsize=(10, 6))
