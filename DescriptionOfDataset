@@ -103,16 +103,15 @@ ______
 We have 4 missing values in a column "A/G Ratio"
 
 '''{python}
-# Count missing values in each column
+missing_values = df.isna()
+
 missing_counts = missing_values.sum();
 
-# Extract rows with missing values
 rows_with_missing = df[df.isna().any(axis=1)];
 
-# Print the results
-print("Missing counts in each column:");
+print("Missing values in each column:");
 print(missing_counts);
-print("Rows with missing values:");
+print("\nRows with missing values:");
 print(rows_with_missing);
 '''
 ______
