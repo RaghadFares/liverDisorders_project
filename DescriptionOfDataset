@@ -94,7 +94,7 @@ using sample() function
 
 '''{python}
 import pandas as pd
-df = pd.read_csv('Indian Liver Patient Dataset (ILPD)');
+df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv');
 sample=df.sample(n=20);
 print(sample);
 '''
@@ -124,6 +124,12 @@ print(summary_stats);
 '''
 ______
 ##Show the Variance
+
+'''{python}
+variance= df.var(numeric_only=True);
+print(variance);
+'''
+
 Variance helps understand the extent of dispersion or scatter of values in each column. As the variance increases, it indicates that the values are more spread out
 and scattered away from the mean, whereas decreasing variance suggests that the values are less scattered and closer to the mean value.
 Therefore, our Variance results indicate:
