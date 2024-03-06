@@ -367,27 +367,39 @@ and as an optional step I checked if there were any left outliers in our data or
 '''{python}
 
 import pandas as pd
-df = pd.read_csv("Indian Liver Patient Dataset (ILPD).csv")
+df = pd.read_csv("cleaned Indian Liver Patient Dataset (ILPD).csv")
 df["Gender"] = df["Gender"].map({"Male": 0, "Female": 1})
-# Print the updated dataset
+# Print and save the updated dataset
 print(df)
-df.to_csv('Indian Liver Patient Dataset (ILPD).csv', index=False)
+df.to_csv('cleaned Indian Liver Patient Dataset (ILPD).csv', index=False)
 
 #Here in the encoding  method, we represent the gender with values 0 and 1, which mean as follows (male =0) and (female = 1)
 
  __
 # Normaliztion \
 '''{python}
+import numpy as np
 import pandas as pd
-df = pd.read_csv("Indian Liver Patient Dataset (ILPD).csv")
-for column in df.columns:
-    if column not in ['Age', 'Selector']:
-        if df[column].dtype == 'int64':
-            df[column] = df[column].astype(float) / 10
 
-# Print the normalized dataset
+df = pd.read_csv("cleaned Indian Liver Patient Dataset (ILPD).csv")
+
+def normalize(x):
+    normalized = (x - np.min(x)) / (np.max(x) - np.min(x))
+    return np.round(normalized, 2)
+
+df['TP'] = normalize(df['DB'])
+df['DB'] = normalize(df['DB'])
+df['Alkphos'] = normalize(df['Alkphos'])
+df['Sgpt'] = normalize(df['Sgpt'])
+df['Sgot'] = normalize(df['Sgot'])
+df['TP'] = normalize(df['TP'])
+df['ALB'] = normalize(df['ALB'])
+df['A/G Ratio'] = normalize(df['A/G Ratio'])
+
+pd.set_option('display.float_format', lambda x: '{:.2f}'.format(x))
 print(df)
-df.to_csv('Indian Liver Patient Dataset (ILPD).csv', index=False)
+df.to_csv('cleaned Indian Liver Patient Dataset (ILPD).csv', index=False)
+
 
 #Here in Normaliztion method, we normalize the attributes and unify their scale since the range for each attribute is quite different ,
 This method helps us to format all the values in dataset and facilitates the analysis process. 
@@ -424,7 +436,52 @@ df.groupby(['Gender', 'Selector']).agg('mean')
 And it was applied in the data. This will give us the mean value for each attribute for both male and female patients who are either selected (1) or not selected (2).
 we ignored age attribute Because it has nothing to do with contracting the disease.
 
+ __
+# Selection feature  \
+'''{python}
+import pandas as pd
+from scipy.stats import chi2_contingency
 
+df = pd.read_csv("Normaliztion.csv")
+# Assuming 'dataset' is a pandas DataFrame
+
+# Correlation calculations
+cor_age = df['Age'].corr(df['Age'])
+cor_gender = df['Gender'].corr(df['Selector'])
+cor_aspartate = df['TB'].corr(df['Selector'])
+cor_alkaline = df['DB'].corr(df['Selector'])
+cor_alamine = df['Alkphos'].corr(df['Selector'])
+cor_direct = df['Sgpt'].corr(df['Selector'])
+cor_total = df['Sgot'].corr(df['Selector'])
+cor_proteins = df['TP'].corr(df['Selector'])
+cor_albumin = df['ALB'].corr(df['Selector'])
+cor_albumin_ratio = df['A/G Ratio'].corr(df['Selector'])
+
+print("Correlation coefficients:")
+print("Gender:", cor_age)
+print("Gender:", cor_gender)
+print("TB :", cor_aspartate)
+print("DB:", cor_alkaline)
+print("Alkphos:", cor_alamine)
+print("Sgpt:", cor_direct)
+print("Sgot:", cor_total)
+print("TP:", cor_proteins)
+print("ALB:", cor_albumin)
+print("A/G Ratio:", cor_albumin_ratio)
+
+ __
+# Drop uncorrelation attributes  \
+'''{python}
+import pandas as pd
+df = pd.read_csv("Normaliztion.csv")
+df = df.drop(['TB', 'DB','Alkphos','Sgpt','Sgot','TP'], axis=1)
+
+# Save the updated dataset
+df.to_csv("Updated_Normalization.csv", index=False)
+
+# Print the updated dataset
+print("\nUpdated dataset:")
+print(df)
 
 
 
