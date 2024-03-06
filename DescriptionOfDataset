@@ -319,7 +319,8 @@ __
 import pandas as pd
 mean_value = df['A/G Ratio'].mean()
 df['A/G Ratio'].fillna(value=mean_value, inplace=True)
-
+print(df_cleaned)
+df_cleaned.to_csv('cleaned Indian Liver Patient Dataset (ILPD).csv', index=False)
 
 # Because all the 4 missing values in our data are in just one column which is the A/G Ratio, so we calculated the mean for this column and then replaced the missing values with this mean
 
