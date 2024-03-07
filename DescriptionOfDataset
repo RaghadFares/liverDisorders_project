@@ -309,7 +309,7 @@ df_cleaned = df.drop_duplicates()
 print("Number of duplicate rows:", num_duplicates)
 print("DataFrame after dropping all duplicate rows:")
 print(df_cleaned)
-df_cleaned.to_csv('cleaned Indian Liver Patient Dataset (ILPD).csv', index=False)
+df_cleaned.to_csv('cleaned_dataset.csv', index=False)
 
 __
 
