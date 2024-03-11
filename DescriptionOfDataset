@@ -532,7 +532,8 @@ And it was applied in the data. This will give us the mean value for each attrib
 we ignored age attribute Because it has nothing to do with contracting the disease.
 
  __
-# Selection feature  \
+
+# Correlation Coefficient and Chi squared  \
 '''{python}
 import pandas as pd
 from scipy.stats import chi2_contingency
@@ -568,46 +569,27 @@ print("Chi-square statistic:", chi2)
 print("P-value:", p)
 print("Degrees of freedom:", dof)
 
-#Here in selection feature method, we used the correlation coefficients between each numeric attribute and the 'Selector' ,
+#Here in this code, we used the correlation coefficients between each numeric attributes and the 'Selector' ,
 we use it to measures the strength and direction of the linear relationship between two variables .
-And for "Age" attribute we chi-squared this test is used to determine if there is a statistically significant relationship between the two categorical variables.
+And for "Age" attribute we chi-squared this test is used to determine if there is a statistically significant relationship between categorical attributes.
  __
 
 # Drop uncorrelation attributes  \
 '''{python}
 import pandas as pd
-import numpy as np
+df = pd.read_csv("cleaned_dataset.csv")
+df = df.drop(['Age'], axis=1)
 
-data = pd.read_csv('cleaned_dataset.csv')
-df = pd.DataFrame(data)
+# Save the updated dataset
+df.to_csv("Updated_cleaned_.csv", index=False)
 
-# Calculate the correlation matrix
-correlation_matrix = df.corr(numeric_only=True)
 
-# Set the threshold for correlation
-correlation_threshold = 0.75
+# As we see the results in Correlation coefficients and Chi-squared there is no attributs with 0.75 or higher.
+except "Age" so we will remove it from our DtataSet.
 
-# Find highly correlated pairs and remove one of the attributes
-highly_correlated_pairs = np.where(np.abs(correlation_matrix) >= correlation_threshold)
-attributes_to_remove = set()
+ __
+# Selection feature  \
 
-for i, j in zip(*highly_correlated_pairs):
-    if i != j and i not in attributes_to_remove and j not in attributes_to_remove:
-        # Check if both attributes are not in the removal set
-        attribute_i = df.columns[i]
-        attribute_j = df.columns[j]
-        attributes_to_remove.add(attribute_j)
-
-# Remove the highly correlated attributes
-df_filtered = df.drop(columns=attributes_to_remove)
-
-print("Original DataFrame:")
-print(df)
-print("\nDataFrame after removing highly correlated attributes:")
-print(df_filtered)
-df.to_csv('cleaned_dataset.csv', index=False)
-
-# in this code we remove attributes with an absolute corrleation of 0.75 or higher
 
 
 
