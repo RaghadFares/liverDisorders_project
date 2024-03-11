@@ -314,6 +314,25 @@ df_cleaned.to_csv('cleaned_dataset.csv', index=False)
 __
 
 # hundling missing values\
+# first we count our missing values in our dataset :
+import pandas as pd
+df = pd.read_csv('cleaned_dataset.csv');
+sample=df.sample(n=20);
+print(sample);
+
+missing_values = df.isna()
+
+missing_counts = missing_values.sum();
+
+rows_with_missing = df[df.isna().any(axis=1)];
+
+print("Missing values in each column:");
+print(missing_counts);
+print("\nRows with missing values:");
+print(rows_with_missing);
+
+#this shows that our data set has 4 missing values and all of them in A/G Ratio
+
 '''{python}
 
 import pandas as pd
