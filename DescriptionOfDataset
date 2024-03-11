@@ -313,7 +313,7 @@ print("DataFrame after dropping all duplicate rows:")
 print(df_cleaned)
 df_cleaned.to_csv('cleaned_dataset.csv', index=False)
 
-# this shows that our dataset has 13 duplicates, and all of them were deleted. 
+# this shows that our dataset has 13 duplicates, and all of them were dealt with by removing them. 
 __
 
 ## Handling Missing Values\ 
