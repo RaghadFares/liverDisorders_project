@@ -470,7 +470,7 @@ df['Gender'] = le.fit_transform(df['Gender'])
 print(df)
 df.to_csv('cleaned_dataset.csv', index=False) 
 
-#Here in the encoding  method, we represent the gender with values 0 and 1, which mean as follows (male =2) and (female = 1)
+#Here in the encoding  method, we represent the gender with values 1 and 2, which mean as follows (male =2) and (female = 1)
 
  __
 # Normaliztion \
@@ -573,15 +573,39 @@ And for "Age" attribute we chi-squared this test is used to determine if there i
 # Drop uncorrelation attributes  \
 '''{python}
 import pandas as pd
-df = pd.read_csv("cleaned_dataset.csv")
-df = df.drop(['Age'], axis=1)
+import numpy as np
 
-# Save the updated dataset
-df.to_csv("Updated_Normalization.csv", index=False)
+data = pd.read_csv('cleaned_dataset.csv')
+df = pd.DataFrame(data)
 
-# Print the updated dataset
-print("\nUpdated dataset:")
+# Calculate the correlation matrix
+correlation_matrix = df.corr(numeric_only=True)
+
+# Set the threshold for correlation
+correlation_threshold = 0.75
+
+# Find highly correlated pairs and remove one of the attributes
+highly_correlated_pairs = np.where(np.abs(correlation_matrix) >= correlation_threshold)
+attributes_to_remove = set()
+
+for i, j in zip(*highly_correlated_pairs):
+    if i != j and i not in attributes_to_remove and j not in attributes_to_remove:
+        # Check if both attributes are not in the removal set
+        attribute_i = df.columns[i]
+        attribute_j = df.columns[j]
+        attributes_to_remove.add(attribute_j)
+
+# Remove the highly correlated attributes
+df_filtered = df.drop(columns=attributes_to_remove)
+
+print("Original DataFrame:")
 print(df)
+print("\nDataFrame after removing highly correlated attributes:")
+print(df_filtered)
+df.to_csv('cleaned_dataset.csv', index=False)
+
+# in this code we remove attributes with an absolute corrleation of 0.75 or higher
+
 
 
 
