@@ -589,7 +589,33 @@ except "Age" so we will remove it from our DtataSet.
 
  __
 # Selection feature  \
+'''{python}
 
+from sklearn.datasets import load_iris
+from sklearn.feature_selection import VarianceThreshold 
+import pandas as pd 
+# Load the Iris dataset
+data = pd.read_csv('Updated_cleaned_.csv')
+df = pd.DataFrame(data)
+iris = load_iris() 
+X = iris.data
+y = iris. target
+# Create a DataFrame for better visualization
+columns = [f"feature_{i}" for i in range(X.shape[1])] 
+df = pd.DataFrame (X, columns=columns)
+# Display the original dataset 
+print("Original Dataset:")
+print(df.head())
+# Apply Variance Threshold
+selector = VarianceThreshold(threshold=0.2)
+X_new = selector.fit_transform(X) 
+# Display the selected features 
+selected_features = [f"feature_{i}" for i in range(X.shape[1]) if selector.get_support()[i]]
+print("\nSelected Features after Variance Threshold:") 
+print(df [selected_features].head())
+
+#here in Selection feature we used Variance Threshold (Filter Method) for rank features based on certain criteria and select the top-ranked
+features.
 
 
 
