@@ -511,14 +511,14 @@ __
 import pandas as pd
 
 # Load the dataset
-df = pd.read_csv("Indian Liver Patient Dataset (ILPD).csv")
+df = pd.read_csv("cleaned_dataset.csv")
 
 # Discretize the "Age" column into ranked age groups
 df["Age"] = pd.cut(df["Age"], bins=[0, 17, 64, df["Age"].max()], labels=[" Children", "Adults", "Seniors "], right=False)
 
 # Print the updated dataset
 print(df)
-df.to_csv('Indian Liver Patient Dataset (ILPD).csv', index=False)
+df.to_csv('cleaned_dataset.csv', index=False)
 
 #Here in discretization method, we convert numbers to Ranking of age groups To facilitate reading for the all. 
 
@@ -528,7 +528,7 @@ df.to_csv('Indian Liver Patient Dataset (ILPD).csv', index=False)
 import pandas as pd
 
 # Read CSV file
-df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv')
+df = pd.read_csv('cleaned_dataset.csv')
 df = df.drop('Age', axis=1)
 df.groupby('Gender').agg('max')
 df.groupby(['Gender', 'Selector']).agg('mean')
