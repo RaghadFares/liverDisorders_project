@@ -315,6 +315,8 @@ __
 
 # hundling missing values\
 # first we count our missing values in our dataset :
+
+'''{python}
 import pandas as pd
 df = pd.read_csv('cleaned_dataset.csv');
 sample=df.sample(n=20);
