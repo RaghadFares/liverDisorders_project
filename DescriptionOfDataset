@@ -543,7 +543,7 @@ we ignored age attribute Because it has nothing to do with contracting the disea
 import pandas as pd
 from scipy.stats import chi2_contingency
 
-df = pd.read_csv("Normaliztion.csv")
+df = pd.read_csv("cleaned_dataset.csv")
 # Assuming 'dataset' is a pandas DataFrame
 
 # Correlation calculations
@@ -574,7 +574,7 @@ print("A/G Ratio:", cor_albumin_ratio)
 # Drop uncorrelation attributes  \
 '''{python}
 import pandas as pd
-df = pd.read_csv("Normaliztion.csv")
+df = pd.read_csv("cleaned_dataset.csv")
 df = df.drop(['TB', 'DB','Alkphos','Sgpt','Sgot','TP'], axis=1)
 
 # Save the updated dataset
