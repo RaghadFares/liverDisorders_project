@@ -399,7 +399,7 @@ print("Total rows with outliers:", rows_with_outliers)
 
 
 ---
-#And now we have removed the rows containing these extreme outliers using the mean method.
+#To handle the outliers in our dataset, we will remove the rows containing extreme outliers using the mean method.
 
 
 
