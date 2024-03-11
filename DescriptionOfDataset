@@ -578,11 +578,12 @@ print("Degrees of freedom:", dof)
 we use it to measures the strength and direction of the linear relationship between two variables .
 And for "Age" attribute we chi-squared this test is used to determine if there is a statistically significant relationship between the two categorical variables.
  __
+
 # Drop uncorrelation attributes  \
 '''{python}
 import pandas as pd
 df = pd.read_csv("cleaned_dataset.csv")
-df = df.drop(['TB', 'DB','Alkphos','Sgpt','Sgot','TP'], axis=1)
+df = df.drop(['Age'], axis=1)
 
 # Save the updated dataset
 df.to_csv("Updated_Normalization.csv", index=False)
