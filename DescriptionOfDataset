@@ -295,8 +295,8 @@ plt.show()
 The (boxplot) shows a decrease in the A/G ratio among individuals with liver disease compared to those without. This indicates that 
 the decrease in the A/G ratio may be an indicator of changes in liver function and a marker for the occurrence of liver disease.
 ________________________
-#Data Preprocessing:
-# Data cleaning
+##Data Preprocessing:
+
 
 __
 
@@ -313,8 +313,8 @@ df_cleaned.to_csv('cleaned_dataset.csv', index=False)
 
 __
 
-# hundling missing values\
-# First, we calculate the number of missing values from our dataset : 
+## hundling missing values\
+#First, we calculate the number of missing values from our dataset : 
 
 '''{python}
 import pandas as pd
@@ -333,7 +333,7 @@ print(missing_counts);
 print("\nRows with missing values:");
 print(rows_with_missing);
 
-#this shows that our data set has 4 missing values and all of them in A/G Ratio
+#this shows that our dataset has 4 missing values and all of them in A/G Ratio column
 
 '''{python}
 
