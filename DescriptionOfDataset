@@ -447,7 +447,8 @@ for column, count in outlier_counts.items():
     print()
 print("Total rows with outliers:", rows_with_outliers)
 
-# and now we 
+# We identified two extreme outliers, one in the DB column and the other in the SGPT column, 
+and then we removed the rows that contained these extreme outliers as The output shown above to be the total outliers in our dataset from 72 to 70 
 
 
 
