@@ -420,11 +420,10 @@ data.to_csv('cleaned_dataset.csv', index=False)
     
     
 
-#As we know, removing outliers focuses on numerical values.
-Because of that, I excluded the non-numerical values and then removed the row that contains extreme outliers 
 
 
-# 
+# Checking the results by counting outliers after handling them.
+
 import pandas as pd
 import numpy as np
 data = pd.read_csv('cleaned_dataset.csv')
