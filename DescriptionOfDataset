@@ -544,32 +544,35 @@ import pandas as pd
 from scipy.stats import chi2_contingency
 
 df = pd.read_csv("cleaned_dataset.csv")
-# Assuming 'dataset' is a pandas DataFrame
 
 # Correlation calculations
-cor_age = df['Age'].corr(df['Age'])
 cor_gender = df['Gender'].corr(df['Selector'])
-cor_aspartate = df['TB'].corr(df['Selector'])
-cor_alkaline = df['DB'].corr(df['Selector'])
-cor_alamine = df['Alkphos'].corr(df['Selector'])
-cor_direct = df['Sgpt'].corr(df['Selector'])
-cor_total = df['Sgot'].corr(df['Selector'])
-cor_proteins = df['TP'].corr(df['Selector'])
-cor_albumin = df['ALB'].corr(df['Selector'])
-cor_albumin_ratio = df['A/G Ratio'].corr(df['Selector'])
+cor_TB = df['TB'].corr(df['Selector'])
+cor_DB = df['DB'].corr(df['Selector'])
+cor_Alkphos = df['Alkphos'].corr(df['Selector'])
+cor_Sgpt = df['Sgpt'].corr(df['Selector'])
+cor_sgot = df['Sgot'].corr(df['Selector'])
+cor_TP = df['TP'].corr(df['Selector'])
+cor_ALB = df['ALB'].corr(df['Selector'])
+cor_A_G_Ratio = df['A/G Ratio'].corr(df['Selector'])
 
 print("Correlation coefficients:")
-print("Gender:", cor_age)
 print("Gender:", cor_gender)
-print("TB :", cor_aspartate)
-print("DB:", cor_alkaline)
-print("Alkphos:", cor_alamine)
-print("Sgpt:", cor_direct)
-print("Sgot:", cor_total)
-print("TP:", cor_proteins)
-print("ALB:", cor_albumin)
-print("A/G Ratio:", cor_albumin_ratio)
+print("TB:", cor_TB)
+print("DB:", cor_DB)
+print("Alkphos:", cor_Alkphos)
+print("Sgpt:", cor_Sgpt)
+print("Sgot:", cor_sgot)
+print("TP:", cor_TP)
+print("ALB:", cor_ALB)
+print("A/G Ratio:", cor_A_G_Ratio)
 
+chi2, p, dof, expected = chi2_contingency(pd.crosstab(df['Age'], df['Selector']))
+
+print("\nChi-squared test result:")
+print("Chi-square statistic:", chi2)
+print("P-value:", p)
+print("Degrees of freedom:", dof)
  __
 # Drop uncorrelation attributes  \
 '''{python}
