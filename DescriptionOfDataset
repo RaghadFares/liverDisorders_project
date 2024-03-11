@@ -420,8 +420,6 @@ data.to_csv('cleaned_dataset.csv', index=False)
     
     
 
-
-
 # Checking the results by counting outliers after handling them.
 
 import pandas as pd
@@ -447,22 +445,11 @@ for column, count in outlier_counts.items():
     print()
 print("Total rows with outliers:", rows_with_outliers)
 
-# We identified two extreme outliers, one in the DB column and the other in the SGPT column, 
-and then we removed the rows that contained these extreme outliers as The output shown above to be the total outliers in our dataset from 72 to 70 
+#We identified two extreme outliers, one in the DB column and the other in the SGPT column,then we removed the rows that contained these extreme outliers.
+The output shown above indicates that the total number of rows containing outliers in our dataset decreased from 72 to 70.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+------------------------------
 
 
 # Data Transmation 
