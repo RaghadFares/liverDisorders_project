@@ -314,7 +314,7 @@ df_cleaned.to_csv('cleaned_dataset.csv', index=False)
 __
 
 ## hundling missing values\
-#First, we calculate the number of missing values from our dataset : 
+#First, we calculate the number of missing values in our dataset:
 
 '''{python}
 import pandas as pd
