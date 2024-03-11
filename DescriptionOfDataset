@@ -573,6 +573,10 @@ print("\nChi-squared test result:")
 print("Chi-square statistic:", chi2)
 print("P-value:", p)
 print("Degrees of freedom:", dof)
+
+#Here in selection feature method, we used the correlation coefficients between each numeric attribute and the 'Selector' ,
+we use it to measures the strength and direction of the linear relationship between two variables .
+And for "Age" attribute we chi-squared this test is used to determine if there is a statistically significant relationship between the two categorical variables.
  __
 # Drop uncorrelation attributes  \
 '''{python}
