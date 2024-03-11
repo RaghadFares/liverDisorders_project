@@ -300,8 +300,10 @@ ________________________
 
 __
 
-# Remove duplicates
+## Handling duplicates\
+#First we calculate the number of duplicates, and then we start handle them
 
+'''{python}
 import pandas as pd
 df = pd.read_csv('Indian Liver Patient Dataset (ILPD).csv')
 num_duplicates = df.duplicated().sum()
@@ -311,6 +313,7 @@ print("DataFrame after dropping all duplicate rows:")
 print(df_cleaned)
 df_cleaned.to_csv('cleaned_dataset.csv', index=False)
 
+# this shows that our dataset has 13 duplicates, and all of them were deleted. 
 __
 
 ## Handling Missing Values\ 
