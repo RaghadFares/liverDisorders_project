@@ -460,40 +460,37 @@ The output shown above indicates that the total number of rows containing outlie
 # encoding\
 '''{python}
 
+from sklearn.preprocessing import LabelEncoder
 import pandas as pd
-df = pd.read_csv("cleaned_dataset.csv")
-df["Gender"] = df["Gender"].map({"Male": 0, "Female": 1})
-# Print and save the updated dataset
+from scipy import stats
+
+df = pd.read_csv('cleaned_dataset.csv')
+le = LabelEncoder()
+df['Gender'] = le.fit_transform(df['Gender'])
 print(df)
-df.to_csv('cleaned_dataset.csv', index=False)
+df.to_csv('cleaned_dataset.csv', index=False) 
 
-
-#Here in the encoding  method, we represent the gender with values 0 and 1, which mean as follows (male =0) and (female = 1)
+#Here in the encoding  method, we represent the gender with values 0 and 1, which mean as follows (male =2) and (female = 1)
 
  __
 # Normaliztion \
 '''{python}
-import numpy as np
 import pandas as pd
-df = pd.read_csv("cleaned_dataset.csv")
 
-def normalize(x):
-    normalized = (x - np.min(x)) / (np.max(x) - np.min(x))
-    return np.round(normalized, 2)
+data = pd.read_csv('cleaned_dataset.csv')
+df = pd.DataFrame(data)
 
-df['TP'] = normalize(df['DB'])
-df['DB'] = normalize(df['DB'])
-df['Alkphos'] = normalize(df['Alkphos'])
-df['Sgpt'] = normalize(df['Sgpt'])
-df['Sgot'] = normalize(df['Sgot'])
-df['TP'] = normalize(df['TP'])
-df['ALB'] = normalize(df['ALB'])
-df['A/G Ratio'] = normalize(df['A/G Ratio'])
+# Columns to normalize
+columns_to_normalize = ['TP', 'DB', 'Alkphos', 'Sgpt', 'Sgot', 'TP', 'ALB', 'A/G Ratio']
 
-pd.set_option('display.float_format', lambda x: '{:.2f}'.format(x))
+# Decimal scaling normalization
+for column in columns_to_normalize:
+    max_abs_value = df[column].abs().max()
+    df[column] = df[column] / (10 ** len(str(int(max_abs_value))))
+
+print("DataFrame after Decimal Scaling Normalization:")
 print(df)
 df.to_csv('cleaned_dataset.csv', index=False)
-
 
 
 #Here in Normaliztion method, we normalize the attributes and unify their scale since the range for each attribute is quite different ,
