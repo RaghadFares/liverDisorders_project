@@ -301,7 +301,7 @@ ________________________
 __
 
 ## Handling duplicates\
-#First we calculate the number of duplicates, and then we start handle them
+#First, we calculate the number of duplicates, and then we start handle them
 
 '''{python}
 import pandas as pd
