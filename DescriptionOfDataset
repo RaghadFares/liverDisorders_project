@@ -330,7 +330,7 @@ print(missing_counts);
 print("\nRows with missing values:");
 print(rows_with_missing);
 
-#this shows that our dataset has 4 missing values and all of them in A/G Ratio column
+#this shows that our dataset has 4 missing values and all of them in A/G Ratio column.
 
 #Secondly, we handle these missing values by calculating the mean value for the target column, 
 and then we replace the missing values with the resulting mean.
@@ -344,8 +344,9 @@ df['A/G Ratio'].fillna(value=mean_value, inplace=True)
 print(df)
 df.to_csv('cleaned_dataset.csv', index=False)
 
-# and Because all the 4 missing values in our dataset are in just one column which is the A/G Ratio, 
-so we calculated the mean for this column and then replaced the missing values with this resulted mean
+
+#Since all 4 missing values in our dataset are in just one column,
+the A/G Ratio, we calculated the mean for this column and replaced the missing values with this calculated mean.
 
 
    __
