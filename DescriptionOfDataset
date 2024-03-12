@@ -393,13 +393,18 @@ for column, count in outlier_counts.items():
 
 print(f"Total Rows with Outliers: {total_rows_with_outliers}")
 
-# As shown above, we have 72 rows that have outlier values in 7 out of 9 numeric columns, which are TB, DB, Alkphos, Sgpt, Sgot, TP, ALB, and A/G Ratio.
 
+# The analysis of our dataset revealed that a significant number of outliers, specifically 388 rows, exist out of the total 570 rows. 
+This high proportion of outliers indicates the presence of extreme values that deviate significantly from the majority of the data.
+To address this issue, we made the decision to adopt a strategy of capping the outliers. Rather than removing these data points entirely,
+we opted to replace them with the nearest non-outlier values. 
+This approach allows us to retain the entirety of our dataset while mitigating the impact of these extreme values on our subsequent analyses.
+By capping the outliers and maintaining the remaining data, 
+we aim to preserve the integrity of the dataset and avoid the potential loss of valuable information that would occur through outright removal of the outliers.
+This ensures that our analysis incorporates as much relevant information as possible, while still accounting for the presence of extreme observations
 
----
-#To handle the outliers in our dataset, we will remove the rows containing extreme outliers using the mean method.
-
-
+--- 
+# handling outliers 
 
 '''{python}
 import pandas as pd
@@ -434,9 +439,6 @@ for column in numeric_columns:
     lower_bound = q1 - outlier_threshold * iqr
     data[column] = np.clip(data[column], lower_bound, upper_bound)
 
-
-
-# Updated dataset with outliers capped
 data.to_csv('cleaned_dataset.csv', index=False)
     
     
