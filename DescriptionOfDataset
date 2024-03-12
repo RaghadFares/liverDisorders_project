@@ -526,6 +526,21 @@ df.to_csv('cleaned_dataset.csv', index=False)
 #Here in Normaliztion method, we normalize the attributes and unify their scale since the range for each attribute is quite different ,
 This method helps us to format all the values in dataset and facilitates the analysis process. 
 
+___
+# Aggregation  \
+'''{python}
+import pandas as pd
+
+# Read CSV file
+df = pd.read_csv('cleaned_dataset.csv')
+df = df.drop('Age', axis=1)
+df.groupby('Gender').agg('max')
+df.groupby(['Gender', 'Selector']).agg('mean')
+
+#here in Aggregation method, we grouped the "Gender" and "Selector" columns and an aggregation function (in this case, "mean")
+And it was applied in the data. This will give us the mean value for each attribute for both male and female patients who are either selected (1) or not selected (2).
+we ignored age attribute Because it has nothing to do with contracting the disease.
+
 __
 #discretization \
 '''{python}
@@ -542,25 +557,9 @@ age_labels = ["Children", "Adults", "Seniors"]
 df["Age"] = pd.qcut(df["Age"], q=3, labels=age_labels)
 
 print(df)
-df.to_csv('cleaned_dataset.csv', index=False)
+df.to_csv('after_transformation.csv', index=False)
 
 #Here in discretization method, we convert numbers to Ranking of age groups To facilitate reading for the all. 
-
- __
-# Aggregation  \
-'''{python}
-import pandas as pd
-
-# Read CSV file
-df = pd.read_csv('cleaned_dataset.csv')
-df = df.drop('Age', axis=1)
-df.groupby('Gender').agg('max')
-df.groupby(['Gender', 'Selector']).agg('mean')
-
-#here in Aggregation method, we grouped the "Gender" and "Selector" columns and an aggregation function (in this case, "mean")
-And it was applied in the data. This will give us the mean value for each attribute for both male and female patients who are either selected (1) or not selected (2).
-we ignored age attribute Because it has nothing to do with contracting the disease.
-
  __
 
 # Correlation Coefficient and Chi squared  \
@@ -568,7 +567,7 @@ we ignored age attribute Because it has nothing to do with contracting the disea
 import pandas as pd
 from scipy.stats import chi2_contingency
 
-df = pd.read_csv("cleaned_dataset.csv")
+df = pd.read_csv("after_transformation.csv")
 
 # Correlation calculations
 cor_gender = df['Gender'].corr(df['Selector'])
@@ -607,11 +606,11 @@ And for "Age" attribute we chi-squared this test is used to determine if there i
 # Drop uncorrelation attributes  \
 '''{python}
 import pandas as pd
-df = pd.read_csv("cleaned_dataset.csv")
+df = pd.read_csv("after_transformation.csv")
 df = df.drop(['Age'], axis=1)
 
 # Save the updated dataset
-df.to_csv("Updated_cleaned_.csv", index=False)
+df.to_csv("after_transformation.csv", index=False)
 
 
 # As we see the results in Correlation coefficients and Chi-squared there is no attributs with 0.75 or higher.
@@ -625,7 +624,7 @@ from sklearn.datasets import load_iris
 from sklearn.feature_selection import VarianceThreshold 
 import pandas as pd 
 # Load the Iris dataset
-data = pd.read_csv('Updated_cleaned_.csv')
+data = pd.read_csv('after_transformation.csv')
 df = pd.DataFrame(data)
 iris = load_iris() 
 X = iris.data
