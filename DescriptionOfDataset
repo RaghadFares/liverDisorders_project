@@ -406,32 +406,40 @@ print(f"Total Rows with Outliers: {total_rows_with_outliers}")
 '''{python}
 import pandas as pd
 import numpy as np
+
 data = pd.read_csv('cleaned_dataset.csv')
-outlier_threshold = 3
-def count_outliers(column):
-    # Calculate the mean and standard deviation
-    column_mean = column.mean()
-    column_std = column.std()
-    upper_bound = column_mean + outlier_threshold * column_std
-    lower_bound = column_mean - outlier_threshold * column_std
-    num_outliers = ((column > upper_bound) | (column < lower_bound)).sum()
-    return num_outliers
-outlier_counts = {}
+outlier_threshold = 1.5
+
+def count_outliers(column_data):
+    q1 = np.percentile(column_data, 25)
+    q3 = np.percentile(column_data, 75)
+    iqr = q3 - q1
+    upper_bound = q3 + outlier_threshold * iqr
+    lower_bound = q1 - outlier_threshold * iqr
+    outliers = (column_data > upper_bound) | (column_data < lower_bound)
+    return sum(outliers)
+
 numeric_columns = data.select_dtypes(include=[np.number]).columns
+
+outlier_counts = {}
+total_rows = len(data)
+
 for column in numeric_columns:
-    num_outliers = count_outliers(data[column])
-    outlier_counts[column] = num_outliers
+    outliers = count_outliers(data[column])
+    outlier_counts[column] = outliers
 
-for column in ['TB', 'DB', 'Alkphos', 'Sgpt', 'Sgot', 'TP', 'A/G Ratio']:
-    column_data = data[column]
-    column_mean = column_data.mean()
-    column_std = column_data.std()
-    upper_bound = column_mean + outlier_threshold * column_std
-    lower_bound = column_mean - outlier_threshold * column_std
-    max_difference_index = column_data[(column_data > lower_bound) & (column_data < upper_bound)].idxmax()
-    data = data.drop(max_difference_index)
+    # Cap outliers by setting them to the nearest non-outlier value
+    q1 = np.percentile(data[column], 25)
+    q3 = np.percentile(data[column], 75)
+    iqr = q3 - q1
+    upper_bound = q3 + outlier_threshold * iqr
+    lower_bound = q1 - outlier_threshold * iqr
+    data[column] = np.clip(data[column], lower_bound, upper_bound)
+
+
+
+# Updated dataset with outliers capped
 data.to_csv('cleaned_dataset.csv', index=False)
-
     
     
 
@@ -439,26 +447,36 @@ data.to_csv('cleaned_dataset.csv', index=False)
 
 import pandas as pd
 import numpy as np
+
 data = pd.read_csv('cleaned_dataset.csv')
-outlier_threshold = 3
-def count_outliers(column):
-    column_mean = column.mean()
-    column_std = column.std()
-    upper_bound = column_mean + outlier_threshold * column_std
-    lower_bound = column_mean - outlier_threshold * column_std
-    num_outliers = ((column > upper_bound) | (column < lower_bound)).sum()
-    return num_outliers
-outlier_counts = {}
+outlier_threshold = 1.5
+
+def count_outliers(column_data):
+    q1 = np.percentile(column_data, 25)
+    q3 = np.percentile(column_data, 75)
+    iqr = q3 - q1
+    upper_bound = q3 + outlier_threshold * iqr
+    lower_bound = q1 - outlier_threshold * iqr
+    outliers = (column_data > upper_bound) | (column_data < lower_bound)
+    return sum(outliers)
+
 numeric_columns = data.select_dtypes(include=[np.number]).columns
+
+outlier_counts = {}
+total_rows_with_outliers = 0
+
 for column in numeric_columns:
-    num_outliers = count_outliers(data[column])
-    outlier_counts[column] = num_outliers
-rows_with_outliers = sum(outlier_counts.values())
+    outliers = count_outliers(data[column])
+    outlier_counts[column] = outliers
+    total_rows_with_outliers += outliers
+
+total_rows = len(data)
+
+print("Outlier Counts:")
 for column, count in outlier_counts.items():
-    print("Column:", column)
-    print("Number of outliers:", count)
-    print()
-print("Total rows with outliers:", rows_with_outliers)
+    print(f"{column}: {count} rows with outliers")
+
+print(f"Total Rows with Outliers: {total_rows_with_outliers}")
 
 #We identified two extreme outliers, one in the DB column and the other in the SGPT column,then we removed the rows that contained these extreme outliers.
 The output shown above indicates that the total number of rows containing outliers in our dataset decreased from 72 to 70.
