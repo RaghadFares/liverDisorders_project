@@ -631,8 +631,9 @@ df = df.drop(['Age'], axis=1)
 df.to_csv("after_transformation.csv", index=False)
 
 
-# As we see the results in Correlation coefficients and Chi-squared there is no attributs with 0.75 or higher.
-except "Age" so we will remove it from our DtataSet.
+# we remove "Age" attribute because the number of degree freedom = 2 , so through this information We were able to find
+significance level = 0.02 and the Critical value = 7.824 , so When we compare between Chi-Square Statistic and Critical value we find that
+Chi-Square Statistic > Critical value (8.34 > 7.824 ) so here in this case the correlation will be higher , so we remove it .
 
  __
 
