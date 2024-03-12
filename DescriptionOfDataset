@@ -532,14 +532,13 @@ ___
 import pandas as pd
 
 # Read CSV file
-df = pd.read_csv('cleaned_dataset.csv')
-df = df.drop('Age', axis=1)
-df.groupby('Gender').agg('max')
-df.groupby(['Gender', 'Selector']).agg('mean')
+data1 = pd.read_csv('cleaned_dataset.csv')
+data1.groupby('Gender').agg('max')
+data1.groupby(['Gender', 'Selector']).agg('mean')
 
 #here in Aggregation method, we grouped the "Gender" and "Selector" columns and an aggregation function (in this case, "mean")
 And it was applied in the data. This will give us the mean value for each attribute for both male and female patients who are either selected (1) or not selected (2).
-we ignored age attribute Because it has nothing to do with contracting the disease.
+
 
 __
 #discretization \
