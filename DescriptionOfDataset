@@ -500,7 +500,7 @@ df['Gender'] = le.fit_transform(df['Gender'])
 print(df)
 df.to_csv('cleaned_dataset.csv', index=False) 
 
-#Here in the encoding  method, we represent the gender with values 1 and 2, which mean as follows (male =2) and (female = 1)
+#Here in the encoding  method, we represent the gender with values 0 and 1, which mean as follows (male =1 ) and (female = 0)
 
  __
 # Normaliztion \
