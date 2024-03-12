@@ -567,7 +567,7 @@ we used this simplification to makes the data easier to interpret and analyze.
  __
 # Selection feature  \
 
-# Correlation Coefficient and Chi squared  \
+# Correlation Coefficient  \
 '''{python}
 import pandas as pd
 from scipy.stats import chi2_contingency
@@ -596,12 +596,25 @@ print("TP:", cor_TP)
 print("ALB:", cor_ALB)
 print("A/G Ratio:", cor_A_G_Ratio)
 
-chi2, p, dof, expected = chi2_contingency(pd.crosstab(df['Age'], df['Selector']))
+_____
+# Chi squared  \
+'''{python}
+import pandas as pd 
+from scipy.stats import chi2_contingency 
+data = pd.read_csv('after_transformation.csv')
+df = pd.DataFrame(data)
+# Create a contingency table
+contingency_table = pd.crosstab(df['Age'], df['Selector']) 
+print("Contingency Table:")
+print(contingency_table)
+#Perform the chi-square test
+chi2_stat, p_value, dof, expected = chi2_contingency(contingency_table)
+print("\nChi-Square Statistic:", chi2_stat)
+print("Degrees of Freedom:", dof)
+print("Expected Frequencies:")
+print(expected)
 
-print("\nChi-squared test result:")
-print("Chi-square statistic:", chi2)
-print("P-value:", p)
-print("Degrees of freedom:", dof)
+
 
 #Here in this code, we used the correlation coefficients between each numeric attributes and the 'Selector' ,
 we use it to measures the strength and direction of the linear relationship between two variables .
