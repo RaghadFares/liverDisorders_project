@@ -357,9 +357,7 @@ df.to_csv('cleaned_dataset.csv', index=False)
 
 ## handling outliers \
 
-#At the beginning, we identify how many rows in each column in our dataset have outliers by using the mean method with an outlier threshold of 3
-If we choose a lower threshold like 1 or 2, it will becomes more sensitive to outliers and detects more rows as outliers. This would result in us handling and removing more rows,
-which could lead to losing important information from the dataset.
+# Before we handle our outliers we did choose the IQR method Based on our dataset to identify how many outliers in our dataset.
 
 '''{python}
 import pandas as pd
