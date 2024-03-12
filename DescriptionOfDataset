@@ -510,10 +510,10 @@ import pandas as pd
 data = pd.read_csv('cleaned_dataset.csv')
 df = pd.DataFrame(data)
 
-# Columns to normalize
+
 columns_to_normalize = ['TP', 'DB', 'Alkphos', 'Sgpt', 'Sgot', 'TP', 'ALB', 'A/G Ratio']
 
-# Decimal scaling normalization
+
 for column in columns_to_normalize:
     max_abs_value = df[column].abs().max()
     df[column] = df[column] / (10 ** len(str(int(max_abs_value))))
@@ -548,18 +548,22 @@ import pandas as pd
 
 df = pd.read_csv("cleaned_dataset.csv")
 
-# Fill missing values with median
+
 median_age = df["Age"].median()
 df["Age"].fillna(median_age, inplace=True)
 
-# Discretize the "Age" column into ranked age groups
+
 age_labels = ["Children", "Adults", "Seniors"]
 df["Age"] = pd.qcut(df["Age"], q=3, labels=age_labels)
 
 print(df)
 df.to_csv('after_transformation.csv', index=False)
 
-#Here in discretization method, we convert numbers to Ranking of age groups To facilitate reading for the all. 
+#Here in discretization method, we convert numbers to Ranking of age groups attribute to :
+0-17 years:Children
+18-64 years: Adults
+65+ years: Seniors
+we used this simplification to makes the data easier to interpret and analyze.
  __
 # Selection feature  \
 
