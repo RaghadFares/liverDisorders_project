@@ -572,7 +572,7 @@ we used this simplification to makes the data easier to interpret and analyze.
 import pandas as pd
 from scipy.stats import chi2_contingency
 
-df = pd.read_csv("after_transformation.csv")
+data1 = pd.read_csv("after_transformation.csv")
 
 # Correlation calculations
 cor_gender = df['Gender'].corr(df['Selector'])
@@ -601,8 +601,8 @@ _____
 '''{python}
 import pandas as pd 
 from scipy.stats import chi2_contingency 
-data = pd.read_csv('after_transformation.csv')
-df = pd.DataFrame(data)
+data1 = pd.read_csv('after_transformation.csv')
+data1 = pd.DataFrame(data)
 # Create a contingency table
 contingency_table = pd.crosstab(df['Age'], df['Selector']) 
 print("Contingency Table:")
@@ -624,11 +624,12 @@ And for "Age" attribute we chi-squared this test is used to determine if there i
 # Drop uncorrelation attributes  \
 '''{python}
 import pandas as pd
-df = pd.read_csv("after_transformation.csv")
-df = df.drop(['Age'], axis=1)
+data1= pd.read_csv('Preprocessed_dataset(AfterDis).csv')
+data1= data1.drop(['Age'], axis=1)
 
 # Save the updated dataset
-df.to_csv("after_transformation.csv", index=False)
+data1.to_csv('Preprocessed_dataset(final).csv', index=False)
+print(data1);
 
 
 # As shown the result of chi-squared =8.34  and number of degree freedom = 2, so through this information we were able
