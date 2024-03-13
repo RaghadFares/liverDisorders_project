@@ -575,15 +575,15 @@ from scipy.stats import chi2_contingency
 data1 = pd.read_csv("after_transformation.csv")
 
 # Correlation calculations
-cor_gender = df['Gender'].corr(df['Selector'])
-cor_TB = df['TB'].corr(df['Selector'])
-cor_DB = df['DB'].corr(df['Selector'])
-cor_Alkphos = df['Alkphos'].corr(df['Selector'])
-cor_Sgpt = df['Sgpt'].corr(df['Selector'])
-cor_sgot = df['Sgot'].corr(df['Selector'])
-cor_TP = df['TP'].corr(df['Selector'])
-cor_ALB = df['ALB'].corr(df['Selector'])
-cor_A_G_Ratio = df['A/G Ratio'].corr(df['Selector'])
+cor_gender = data1['Gender'].corr(data1['Selector'])
+cor_TB = data1['TB'].corr(data1['Selector'])
+cor_DB = data1['DB'].corr(data1['Selector'])
+cor_Alkphos = data1['Alkphos'].corr(data1['Selector'])
+cor_Sgpt = data1['Sgpt'].corr(data1['Selector'])
+cor_sgot = data1['Sgot'].corr(data1['Selector'])
+cor_TP = data1['TP'].corr(data1['Selector'])
+cor_ALB = data1['ALB'].corr(data1['Selector'])
+cor_A_G_Ratio = data1['A/G Ratio'].corr(data1['Selector'])
 
 print("Correlation coefficients:")
 print("Gender:", cor_gender)
@@ -604,7 +604,7 @@ from scipy.stats import chi2_contingency
 data1 = pd.read_csv('after_transformation.csv')
 data1 = pd.DataFrame(data)
 # Create a contingency table
-contingency_table = pd.crosstab(df['Age'], df['Selector']) 
+contingency_table = pd.crosstab(data1['Age'], data1['Selector']) 
 print("Contingency Table:")
 print(contingency_table)
 #Perform the chi-square test
