@@ -631,9 +631,10 @@ df = df.drop(['Age'], axis=1)
 df.to_csv("after_transformation.csv", index=False)
 
 
-# we remove "Age" attribute because the number of degree freedom = 2 , so through this information We were able to find
-significance level = 0.02 and the Critical value = 7.824 , so When we compare between Chi-Square Statistic and Critical value we find that
-Chi-Square Statistic > Critical value (8.34 > 7.824 ) so here in this case the correlation will be higher , so we remove it .
+# As shown the result of chi-squared =8.34 and number of degree freedom = 2, so through this information we were able to find 
+significance level and Critical value Using the table on the lecture slide , after using the table, we concluded as follows significance level = 0.02 and the Critical value = 7.824 ,
+so When we compare between Chi-Square Statistic and Critical value we find that :
+Chi-Square Statistic > Critical value (8.34 > 7.824 ) so here in this case the correlation will be higher , so we remove "Age" attribute .
 
  __
 
